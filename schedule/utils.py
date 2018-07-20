@@ -23,7 +23,6 @@ def get_micro_dust(location):
     )
     result_lxml = ElementTree.fromstring(response.text)
     result_json = json.loads(json.dumps(xmljson.badgerfish.data(result_lxml)))
-    pdb.set_trace()
     print (location)
     result_json_item = result_json['response']['body']['items']['item']
 

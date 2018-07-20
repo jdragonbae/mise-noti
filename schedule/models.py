@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Schedule(models.Model):
-    summary = models.TextField()
+    scheTitle = models.TextField()
     location = models.CharField(max_length=255)
-    timezone = models.CharField(max_length=255)
+    date = models.CharField(max_length=255)
     micro_dust = models.CharField(max_length=255, blank=True)

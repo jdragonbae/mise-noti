@@ -27,4 +27,4 @@ def get_micro_dust(location):
     print (location)
     result_json_item = result_json['response']['body']['items']['item']
 
-    return result_json_item[0]['pm25Value24']['$'] + randint(1, 5) 
+    return result_json_item[0]['pm25Value']['$'] + randint(1, 5)

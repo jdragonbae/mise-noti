@@ -16,4 +16,5 @@ class ScheduleApiView(APIView):
         get_token(code)
         schedules = Schedule.objects.all()
         serializer = ScheduleListSerializer(schedules, many=True)
-        return Response(serializer.data, status=200)
+
+        return Response({'data':serializer.data}, status=200)

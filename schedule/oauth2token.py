@@ -40,7 +40,7 @@ def get_token(code):
             location = event['location'].split(',')[0].strip()
             micro_dust = get_micro_dust(location)
             pdb.set_trace()
-            Schedule.objects.create(summary=event['summary'],location=location, timezone=start, micro_dust=micro_dust)
+            Schedule.objects.create(scheTitle=event['summary'],location=location, time=start, micro_dust=micro_dust)
             
 
 

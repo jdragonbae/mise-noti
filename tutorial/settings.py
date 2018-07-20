@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_swagger',
     'snippets',
+    'schedule',
 )
 
 SECURE_SSL_REDIRECT = bool(int(os.environ.get('SECURE_SSL_REDIRECT', 0)))

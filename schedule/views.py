@@ -12,9 +12,10 @@ from schedule.oauth2token import get_token
 
 class ScheduleApiView(APIView):
     def get(self, request, format=None):
+        Schedule.objects.all().delete()
         code = request.META['HTTP_CODE']
         get_token(code)
         schedules = Schedule.objects.all()
         serializer = ScheduleListSerializer(schedules, many=True)
-
+        print(Schedule.objects.count())
         return Response({'data':serializer.data}, status=200)

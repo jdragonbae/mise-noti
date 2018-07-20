@@ -39,7 +39,7 @@ def get_token(code):
         if 'location' in event:
             location = event['location'].split(',')[0].strip()
             micro_dust = get_micro_dust(location)
-            Schedule.objects.create(summary=event['summary'],location=location, timezone=start, micro_dust=micro_dust)
+            Schedule.objects.create(scheTitle=event['summary'],location=location, time=start, micro_dust=micro_dust)
             
 
 

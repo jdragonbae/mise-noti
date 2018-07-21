@@ -12,15 +12,10 @@ from schedule.models import Schedule
 from schedule.utils import get_micro_dust
 
 def get_token(code):
-    # Setup the Calendar API
     SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
-    #store = file.Storage('token.json')
-    #creds = store.get()
-    #if not creds or creds.invalid:
-    flow = client.flow_from_clientsecrets('credentials.json', SCOPES)
+    flow = client.flow_from_clientsecrets('.config/credential.json', SCOPES)
     flow.redirect_uri = "urn:ietf:wg:oauth:2.0:oob"
     credential = flow.step2_exchange(code=code, http=None)
-    #    creds = tools.run_flow(flow, store)
 
     service = build('calendar', 'v3', http=credential.authorize(Http()))
 

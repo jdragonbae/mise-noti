@@ -17,9 +17,8 @@ def get_gecode(location):
 
 
 def get_micro_dust(location):
-    service_key = '8Y859478tjmmk8A2oYZjUSRYq%2B8ODakvkBAMuvzGx%2FOIrPCIxjDQ6CHS4GNmdLofIxLoAb8sfCb%2F0c4zLJVuNA%3D%3D'
     response = requests.get(
-        f'http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?serviceKey=8Y859478tjmmk8A2oYZjUSRYq%2B8ODakvkBAMuvzGx%2FOIrPCIxjDQ6CHS4GNmdLofIxLoAb8sfCb%2F0c4zLJVuNA%3D%3D&numOfRows=10&pageSize=10&pageNo=1&startPage=1&stationName={location}&dataTerm=DAILY&ver=1.3'
+        f'http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?serviceKey=&numOfRows=10&pageSize=10&pageNo=1&startPage=1&stationName={location}&dataTerm=DAILY&ver=1.3'
     )
     result_lxml = ElementTree.fromstring(response.text)
     result_json = json.loads(json.dumps(xmljson.badgerfish.data(result_lxml)))

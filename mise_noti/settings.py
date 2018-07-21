@@ -1,11 +1,18 @@
 import os
+import json
 # Django settings for mise_noti project.
 
-DEBUG = True
+DEBUG = False
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_DIR = os.path.join(BASE_DIR, '.config')
+CONFIG_SECRET_COMMON_FILE = os.path.join(CONFIG_DIR, 'common.json')
+config_secret_common = json.loads(open(CONFIG_SECRET_COMMON_FILE).read())
+SERVICE_KEY = config_secret_common['django']['SERVICE_KEY']
 
 MANAGERS = ADMINS
 
@@ -134,7 +141,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_swagger',
     'schedule',
-)
+) 
 
 SECURE_SSL_REDIRECT = bool(int(os.environ.get('SECURE_SSL_REDIRECT', 0)))
 USE_X_FORWARDED_HOST = SECURE_SSL_REDIRECT

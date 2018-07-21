@@ -1,5 +1,5 @@
 """
-WSGI config for tutorial project.
+WSGI config for mise_noti project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
@@ -16,7 +16,7 @@ framework.
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../../')
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tutorial.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mise_noti.settings")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION

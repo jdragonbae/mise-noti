@@ -1,5 +1,5 @@
 import os
-# Django settings for tutorial project.
+# Django settings for mise_noti project.
 
 DEBUG = True
 
@@ -94,10 +94,10 @@ MIDDLEWARE = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'tutorial.urls'
+ROOT_URLCONF = 'mise_noti.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'tutorial.wsgi.application'
+WSGI_APPLICATION = 'mise_noti.wsgi.application'
 
 TEMPLATES = [
     {
@@ -133,7 +133,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'rest_framework',
     'rest_framework_swagger',
-    'snippets',
     'schedule',
 )
 

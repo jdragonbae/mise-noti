@@ -5,14 +5,14 @@ from rest_framework_swagger.views import get_swagger_view
 
 from schedule import views
 
-#router = DefaultRouter()
+router = DefaultRouter()
 #router.register(r'v1/auth/', views.ScheduleApiView)
 
-#schema_view = get_swagger_view(title='Snippets API')
+schema_view = get_swagger_view(title='Mise-noti API')
 
 urlpatterns = [
-    # url('^$', schema_view),
+    url('^$', schema_view),
     url(r'v1/auth/', views.ScheduleApiView.as_view()),
-  #  url(r'^', include(router.urls)),
-  #   url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
